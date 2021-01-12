@@ -1,0 +1,41 @@
+version: '3'
+services:
+  torkelpostgres:
+    build: ./Database
+    container_name: TorkelPostgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: testPass
+      POSTGRES_USER: postgres
+    healthcheck:
+      test: "pg_isready -q -U postgres"
+    networks:
+      dbnetwork:
+        ipv4_address: 10.1.0.11
+    volumes:
+      - ./Database:/Database
+
+  # XXX:
+  #   build: ./XX
+  #   restart: always
+  #   environment:
+  #     POSTGRES_HOST: postgres:testPass@postgres:4000
+  #   ports:
+  #     - 8000:3000
+  #   depends_on:
+  #     torkelpostgres:
+  #       condition: service_healthy
+  #   networks:
+  #     dbnetwork:
+  #       ipv4_address: 10.0.0.12
+  #   volumes:
+  #     - ./API:/API
+
+networks:
+  dbnetwork:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 10.1.0.0/16
+          gateway: 10.1.0.1
