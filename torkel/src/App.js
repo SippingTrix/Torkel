@@ -6,8 +6,10 @@ import {
   Route,
   Redirect
 } from 'react-router-dom';
-import Header from './components/header/Header'
-import Footer from './components/header/Footer' 
+import Header from './components/Header/Header'
+import Footer from './components/Footer/Footer' 
+
+import Registration from './components/Registration/Registration';
 
 
 function App() {
@@ -25,6 +27,10 @@ function App() {
 
         <Route exact path='/cart'>
           {/*Put cart here */}
+        </Route>
+
+        <Route exact path='/registration'>
+          <Registration />
         </Route>
 
         <Route path='/'>
