@@ -19,7 +19,7 @@ const useStyles = makeStyles({
         height: '200px',
         width: '300px'
     },
-    
+
     searchField: {},
   });
   
