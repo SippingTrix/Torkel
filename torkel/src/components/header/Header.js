@@ -13,11 +13,12 @@ const useStyles = makeStyles({
       justifyContent: 'space-between',
       paddingLeft: '3%',
       paddingRight: '3%',
+      backgroundColor : 'white'
     },
 
     logo: {
-        height: '200px',
-        width: '300px'
+        height: '150px',
+        width: '250px'
     },
 
     searchField: {},
@@ -31,7 +32,6 @@ const useStyles = makeStyles({
           <img src={Logo} alt='Torkel Logo' className={classes.logo} />
           <h1>Torkel</h1>
           <div className={classes.headerIcon}>
-
           <DehazeIcon/>
           <ShoppingCartIcon/>
           </div>
