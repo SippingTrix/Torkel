@@ -1,0 +1,15 @@
+.header_toolbar {  
+    display: flex;
+    justify-content: space-between;
+    padding-Left: 3%;
+    padding-Right: 3%;
+    background-color: black;
+  }
+.header_logo {
+    height: 100px;
+    width: 150px;
+}
+.header_icon{
+  display:flex;
+  justify-content: space-evenly;
+}

@@ -1,0 +1,22 @@
+
+.form {
+    margin-top:12%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction: column;
+    
+}
+
+.email{
+    width:600px;
+    height: 35px;
+}
+
+.password{
+    width:600px;
+    height: 35px;
+}
+
+
+

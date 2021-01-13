@@ -29,5 +29,5 @@ const StateProvider = (props) => {
     );
 }
 
-export { StateProvider };
+export default StateProvider ;
 export { StateContext };

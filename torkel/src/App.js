@@ -4,12 +4,13 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Redirect
+  
 } from 'react-router-dom';
-import Header from './components/Header/Header'
-import Footer from './components/Footer/Footer' 
 
 import Registration from './components/Registration/Registration';
+import Header from './components/header/Header'
+import Footer from './components/Footer/Footer' 
+import Login from './components/Login/Login'
 
 
 function App() {
@@ -31,6 +32,10 @@ function App() {
 
         <Route exact path='/registration'>
           <Registration />
+        </Route>
+
+        <Route path='/login'>
+          <Login />
         </Route>
 
         <Route path='/'>
