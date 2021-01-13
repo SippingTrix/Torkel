@@ -4,10 +4,11 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Redirect
+  
 } from 'react-router-dom';
 import Header from './components/header/Header'
-import Footer from './components/header/Footer' 
+import Footer from './components/Footer/Footer' 
+import Login from './components/Login/Login'
 
 
 function App() {
@@ -27,9 +28,11 @@ function App() {
           {/*Put cart here */}
         </Route>
 
-        <Route path='/'>
-          {/*Put homepage here */}
+       
+        <Route path='/login'>
+          <Login />
         </Route>
+     
       </Switch>
 
       <div className="footer">
