@@ -3,7 +3,7 @@ exports.up = function(knex) {
         table.increments('id').notNullable();
         table.integer('runner').notNullable();
         table.integer('number').notNullable();
-        table.float('expiration').notNullable();
+        table.string('expiration').notNullable();
         table.integer('csv').notNullable();
         table.integer('zipcode').notNullable();
 
