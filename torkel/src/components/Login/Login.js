@@ -4,27 +4,25 @@ import './Login.css'
 export default function Login(){
     return (
         <>
-        <div className='login-header'>
-            <h1>Login</h1>
-        </div>
-        
-
-        <div className='form'>
-            <form id ="login">
-                <label>Email: </label>
-                <input className="email" type="email"/>
-                <br/>
-                <label>Password: </label>
-                <input className="password" type="password"/>
-                <br/>
-                <button type="submit" className="login-button">Login</button>
-                <br/>
-            </form>
-        </div>
-        <br/>
-        <div className="register">Register for an account</div>
-        <br/>
-        <div className="forgot-password">Forgot Password</div>
-    </>
+       
+            <div className='form'>
+                <h1 className="test">Login</h1>
+                <form id ="login">
+                    <label>Email </label>
+                    <br/>
+                    <input className="email" type="email" placeholder="user@.mil"/>
+                    <br/>
+                    <label>Password: </label>
+                    <br/>
+                    <input className="password" type="password" placeholder="8-16 Characters"/>
+                    <br/>
+                    <button type="submit" className="login-button">Login</button>
+                    <br/>
+                    <div className="register">Register for an account</div>
+                    <div className="forgot-password">Forgot Password</div>
+                </form>
+            </div>
+          
+        </>
     )
 }

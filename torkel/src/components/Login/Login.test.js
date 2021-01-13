@@ -9,8 +9,8 @@ describe("Login Screen",  () =>{
         wrapper = shallow(<Login />);
     })
         
-    it("should render an h1 tag", () =>{
-        expect(wrapper.find(".login-header").exists()).toBeTruthy();
+    it("should render an form tag", () =>{
+        expect(wrapper.find(".form").exists()).toBeTruthy();
     })
 
     it("consist of a username and password field", () =>{

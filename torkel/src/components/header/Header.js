@@ -13,8 +13,8 @@ import ShoppingCartIcon from '@material-ui/icons/ShoppingCart'
         <Toolbar className="header_toolbar">
           <img src={Logo} alt='Torkel Logo' className="header_logo"/>
           <h1>Torkel</h1>
-          <div className>
-          <ShoppingCartIcon/><br/>
+          <div className="header_icon">
+          <ShoppingCartIcon/>
           <DehazeIcon/>
           </div>
           
