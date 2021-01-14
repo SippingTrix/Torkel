@@ -77,23 +77,8 @@ router.get('/runners', async (req, res) => {
 
         runnerData.push(tObj)
     })
-    /*
-    [
-        {
-            name: //for runner
-            restraunts: [restraunts]
-            dropOffLocation: ''
-            dropOffTime: ''
-        }
-    ]
-    */
-    res.status(200).send(runnerData)
+    res.statusCode(200).send(runnerData)
     
 })
-
-/*
-/current/runners -> returning runners that are currently accepting orders
-	runner name and restraunts they are heading to and drop off time
-*/
 
 module.exports = router
