@@ -2,8 +2,11 @@ import React from "react";
 
 const StateContext = React.createContext({});
 
+
 const StateProvider = (props) => {
+
   const initialState = {
+    siteMap: ['Contact-Us','Information','Site-map'],
     HomepageListing: {
       Restaurants: {
         title: "Restaurants for the day",
@@ -22,6 +25,7 @@ const StateProvider = (props) => {
         ],
       },
     },
+
 
     cart: [],
     setState: (newState) => {
@@ -42,3 +46,4 @@ const StateProvider = (props) => {
 
 export default StateProvider;
 export { StateContext };
+
