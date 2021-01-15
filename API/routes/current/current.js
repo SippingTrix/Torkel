@@ -77,7 +77,7 @@ router.get('/runners', async (req, res) => {
 
         runnerData.push(tObj)
     })
-    res.statusCode(200).send(runnerData)
+    res.status(200).send(runnerData)
     
 })
 

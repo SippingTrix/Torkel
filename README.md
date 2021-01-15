@@ -28,5 +28,5 @@ GET `/current/runners`  |  Order ID with information on runner for that order
 
 ## Database Schema
 Here is a diagram of the database schema:
-![database schema](./Torkel.png)
+![database schema](./readme_images/Torkel.png)
 ## End
