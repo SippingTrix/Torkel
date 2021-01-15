@@ -3,15 +3,14 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     flex-direction: row;
-    padding-left: 6vw;
-    padding-right: 5vw;
-    padding-top: 5vw;
+    padding-left: 8vw;
+    padding-top: 2vw;
 
 }
 
 .individualBox {
-    width: 28vw;
-    height: 28vw;
+    width: 20vw;
+    height: 25vw;
     display: grid;
     justify-content: space-around;
     grid-template-areas: 
