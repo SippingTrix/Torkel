@@ -1,33 +1,44 @@
-import React from 'react';
+import React from "react";
 
 const StateContext = React.createContext({});
 
 const StateProvider = (props) => {
-    const initialState = {
-        registrationForm: {
-            first_name: '',
-            last_name: '',
-            email: '',
-            password: '',
-            user: true,
-            runner: false,
-        },
-        cart: [],
-        setState: (newState) => {
-            updateState(state => {
-                return { ...state, ...newState };
-            });
-        }
-    }
+  const initialState = {
+    HomepageListing: {
+      Restaurants: {
+        title: "Restaurants for the day",
+        listings: ["Chipotle", "Chick-fila", "5 Guys"],
+      },
+      Runner: {
+        title: "Runners for the day",
+        listings: ["Runner 1", "Runner 2", "Runner 3"],
+      },
+      Recommended: {
+        title: "Recommended Items",
+        listings: [
+          "Chips and Guacamole",
+          "Spicy Chicken Sandwich Meal l/ Sweet Tea",
+          "Smoked Bacon Double Cheesburger w/ Med Fries",
+        ],
+      },
+    },
 
-    const [ state, updateState ] = React.useState(initialState);
+    cart: [],
+    setState: (newState) => {
+      updateState((state) => {
+        return { ...state, ...newState };
+      });
+    },
+  };
 
-    return (
-        <StateContext.Provider value={ state }>
-            { props.children }
-        </StateContext.Provider>
-    );
-}
+  const [state, updateState] = React.useState(initialState);
 
-export default StateProvider ;
+  return (
+    <StateContext.Provider value={state}>
+      {props.children}
+    </StateContext.Provider>
+  );
+};
+
+export default StateProvider;
 export { StateContext };
