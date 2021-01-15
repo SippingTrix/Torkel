@@ -7,11 +7,8 @@ WORKDIR /API
 COPY . /API
 
 RUN apk add --update nodejs npm \
-	&& npm install \
-	&& npm install morgan \
-	&& npm install helmet \
-	&& npm install cors \
-	&& npm install express \
-	&& npm install axios
+	&& apk add --no-cache bash \
+	&& apk --update add postgresql-client \
+	&& npm install
 
 CMD [ "npm", "start" ]
