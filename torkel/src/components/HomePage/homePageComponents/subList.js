@@ -12,14 +12,29 @@ export default function SubList() {
   React.useEffect(() => {
     axios.get(apiURL+`current/runners`)
       .then(res => {
-        let tArr = res.data.map(i => {
+        let tArr1 = res.data.map(i => {
           return (
             `runner: ${i.name}  restraunts: ${i.restraunts}` + '\n' +
             `drop off location: ${i.dropOffLocation}` + '\n' +
             `drop off time: ${i.dropOffTime}`)
         })
+        let tArr2 = res.data.map(i => {
+          return i.restraunts
+        })
 
-        context.setState({HomepageListing: { ...HomepageListing, Runner: {...HomepageListing.Runner, listings: tArr}}})
+        context.setState({
+          HomepageListing: {
+            ...HomepageListing,
+            Runner: {
+              ...HomepageListing.Runner,
+              listings: tArr1
+            },
+            Restaurants: {
+              ...HomepageListing.Restaurants,
+              listings: tArr2
+            }
+          }
+        })
       })
       .catch(err => {
         console.log(err)

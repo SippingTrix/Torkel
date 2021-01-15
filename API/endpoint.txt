@@ -4,12 +4,9 @@
 GET requests
 /current/runners -> returning runners that are currently accepting orders
 	runner name and restraunts they are heading to and drop off time
-/current/restraunts
-	names of restraunts that runners are going to today
 /current/hotItems
 	name description of items Math.random on menu based off the restraunts that are on the menu today
-/current/runnerTimes
-	drop off location and time and runner name
+
 
 
 /runner:id
