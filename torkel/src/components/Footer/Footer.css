@@ -15,6 +15,9 @@
     width: 130px;
 }
 #links{
-display: flex;
-
+ display: flex; 
+ width: 25vw;
+ justify-content: space-between;
+ flex-direction: row;
 }
+
