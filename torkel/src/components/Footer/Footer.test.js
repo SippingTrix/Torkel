@@ -1,10 +1,8 @@
-import { mount, shallow } from "enzyme";
+import { mount } from "enzyme";
 import Footer from './Footer'
 import StateProvider from '../../State.js'
 import {
   BrowserRouter as Router,
-  Switch,
-  Route
 } from 'react-router-dom';
 
 describe('footer',() =>{
@@ -20,6 +18,7 @@ describe('footer',() =>{
         </Router>
       </StateProvider>
     )
+    console.log(footerWrapper.debug())
   })
 
 

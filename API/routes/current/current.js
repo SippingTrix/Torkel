@@ -7,7 +7,6 @@ router.get('/runners', async (req, res) => {
     let yy = cDate.getFullYear()
     let mm = cDate.getMonth()+1
     let dd = cDate.getDate()
-    console.log(cDate)
     let runnerData = []
     
     let todaysOrders = await knex
@@ -17,7 +16,6 @@ router.get('/runners', async (req, res) => {
     todaysOrders = todaysOrders.map(i => {
         return i.id
     })
-    console.log(todaysOrders)
 
     let restraunt = await knex
         .select('restraunts.name', 'orders.id')
@@ -32,7 +30,6 @@ router.get('/runners', async (req, res) => {
             restraunts.push(i)
         }
     })
-    console.log(restraunts)
 
     let runners = await knex
         .select('users.first_name', 'users.last_name', 'orders.id')
@@ -40,14 +37,11 @@ router.get('/runners', async (req, res) => {
         .join('runners', 'runners.id', 'orders.runner')
         .join('users', 'users.id', 'runners.user_id')
         .where('orders.id', 'in', todaysOrders)
-    console.log(runners)
 
     let dropoff = await knex
         .select('dropoff_location', 'estimated_time', 'id')
         .from('orders')
         .where('id', 'in', todaysOrders)
-    console.log(dropoff)
-    console.log('test')
 
 
 

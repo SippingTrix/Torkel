@@ -6,6 +6,7 @@ const StateContext = React.createContext({});
 const StateProvider = (props) => {
 
   const initialState = {
+    apiURL: 'http://localhost:8000/',
     siteMap: ['Contact-Us','Information','Site-map'],
     registrationForm: {
       first_name: '',

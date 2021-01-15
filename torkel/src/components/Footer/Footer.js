@@ -24,7 +24,7 @@ export default function Footer() {
           
         <img src={Logo} alt='Torkel Logo' className="footer_logo"/>
         
-        <h3><a id='Twitter' href="https://twitter.com/">Follow us on Twitter!</a></h3>
+        <h3><a id='Twitter' href="https://twitter.com/MontemayorIV">Follow us on Twitter!</a></h3>
       </footer>
 
       </>

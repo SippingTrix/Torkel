@@ -1,25 +1,43 @@
 import React from 'react'
 import { StateContext } from '../../../State'
 import './subList.css'
-
+import axios from 'axios'
 
 
 
 export default function SubList() {
-    let { HomepageListing } =React.useContext(StateContext)
+  let { HomepageListing, apiURL } = React.useContext(StateContext)
+  let context = React.useContext(StateContext)
 
-    return (
-        <div className="content">
-          {Object.keys(HomepageListing).map(ListingGroup => {
-              return(
-              <div className='individualBox'>
-                <h4 className = 'titleBox' id= 'title'>{HomepageListing[ListingGroup].title}</h4>
-                <ul className='list_items'>
-                  { HomepageListing[ListingGroup].listings.map(listing => <div>{listing}</div>)}
-                </ul>
-              </div>              
-              )
-          })}
-        </div>
-    )
+  React.useEffect(() => {
+    axios.get(apiURL+`current/runners`)
+      .then(res => {
+        let tArr = res.data.map(i => {
+          return (
+            `runner: ${i.name}  restraunts: ${i.restraunts}` + '\n' +
+            `drop off location: ${i.dropOffLocation}` + '\n' +
+            `drop off time: ${i.dropOffTime}`)
+        })
+
+        context.setState({HomepageListing: { ...HomepageListing, Runner: {...HomepageListing.Runner, listings: tArr}}})
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  }, []) // eslint-disable-line react-hooks/exhaustive-deps
+
+  return (
+      <div className="content">
+        {Object.keys(HomepageListing).map(ListingGroup => {
+            return(
+            <div className='individualBox'>
+              <h4 className = 'titleBox' id= 'title'>{HomepageListing[ListingGroup].title}</h4>
+              <ul className='list_items'>
+                { HomepageListing[ListingGroup].listings.map(listing => <div><pre>{listing}</pre></div>)}
+              </ul>
+            </div>              
+            )
+        })}
+      </div>
+  )
 }
