@@ -6,6 +6,8 @@ import {
   Route,
   
 } from 'react-router-dom';
+
+import Registration from './components/Registration/Registration';
 import Header from './components/Header/Header'
 import Footer from './components/Footer/Footer' 
 import Login from './components/Login/Login'
@@ -36,11 +38,17 @@ function App() {
           {/*Put cart here */}
         </Route>
 
-       
+        <Route exact path='/registration'>
+          <Registration />
+        </Route>
+
         <Route path='/login'>
           <Login />
         </Route>
-     
+
+        <Route path='/'>
+          {/*Put homepage here */}
+        </Route>
       </Switch>
       </div>
 
