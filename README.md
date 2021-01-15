@@ -16,6 +16,7 @@ RUN
 docker-compose up 
 ``` 
 Runs the server on http://localhost:8000 with the following available endpoints
+Runs the app on http://localhost:8001 
 
 
 ## API Endpoints
