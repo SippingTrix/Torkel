@@ -7,6 +7,12 @@ const StateProvider = (props) => {
 
   const initialState = {
     siteMap: ['Contact-Us','Information','Site-map'],
+    registrationForm: {
+      first_name: '',
+      last_name: '',
+      emailInput: '',
+      passwordInput: '',
+    },
     HomepageListing: {
       Restaurants: {
         title: "Restaurants for the day",
